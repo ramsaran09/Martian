@@ -1,5 +1,7 @@
 package dev.mustaq.martian.di
 
+import dev.mustaq.martian.network.ApiProvider
+import dev.mustaq.martian.repository.MarsImageRepository
 import dev.mustaq.martian.ui.splash.SplashViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -16,11 +18,11 @@ object AppModule {
     }
 
     private val repoModules = module {
-
+        single { MarsImageRepository(get()) }
     }
 
     private val commonModules = module {
-
+        single { ApiProvider.client }
     }
 
     fun appModules() = viewModelModules + repoModules + commonModules
