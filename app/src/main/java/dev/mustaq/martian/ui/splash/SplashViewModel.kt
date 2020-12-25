@@ -21,7 +21,7 @@ class SplashViewModel : ViewModel() {
 
     init {
         viewModelScope.launch {
-            delay(1500)
+            delay(2500)
             navigateLd.value = NavigationModel(
                 HomeActivity::class.java,
                 finishCurrent = true

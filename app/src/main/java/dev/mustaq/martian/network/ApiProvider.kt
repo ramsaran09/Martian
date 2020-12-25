@@ -37,7 +37,7 @@ object ApiProvider: KoinComponent {
             addInterceptor{chain ->
                 var request = chain.request()
                 request = if (context.isInternetAvailable().defaultValue())
-                    request.newBuilder().header("Cache-Control", "public, max-age" + 5).build()
+                    request.newBuilder().header("Cache-Control", "public, max-age=" + 5).build()
                 else request.newBuilder().header("Cache-Control", "public, only-if-cached, max-stale=" + 60 * 60 * 24 * 7).build()
                 chain.proceed(request)
             }
