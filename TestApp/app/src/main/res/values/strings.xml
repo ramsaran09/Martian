@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TestApp</string>
+    <string name="str_gps_logs_1">Gps Logs (1)</string>
+    <string name="str_v1_78">v1.78</string>
+    <string name="str_sales_executive">SALES EXECUTIVE</string>
+    <string name="str_travel_log_every_10_min">Travel Log (Every 10 min.)</string>
+</resources>
