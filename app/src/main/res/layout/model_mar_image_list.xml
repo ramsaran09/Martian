@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="12dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/grey_light">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/uiCvMarsImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/uiIvMarsImage"
+                        android:layout_width="100dp"
+                        android:layout_height="0dp"
+                        android:src="@mipmap/ic_launcher"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/uiTvIdTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/str_photo_id"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/uiTvCameraTitle"
+                app:layout_constraintStart_toEndOf="@id/uiCvMarsImage"
+                app:layout_constraintTop_toTopOf="@id/uiCvMarsImage"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/uiTvCameraTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/str_camera"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/uiTvEarthDateTitle"
+                app:layout_constraintStart_toEndOf="@id/uiCvMarsImage"
+                app:layout_constraintTop_toBottomOf="@+id/uiTvIdTitle" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/uiTvEarthDateTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/str_earth_date"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/uiCvMarsImage"
+                app:layout_constraintTop_toBottomOf="@+id/uiTvCameraTitle" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/uiTvId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textColor="@color/grey"
+                app:layout_constraintBottom_toBottomOf="@id/uiTvIdTitle"
+                app:layout_constraintStart_toEndOf="@id/uiTvIdTitle"
+                app:layout_constraintTop_toTopOf="@id/uiTvIdTitle"
+                tools:text="2003" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/uiTvCamera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/grey"
+                app:layout_constraintBottom_toBottomOf="@id/uiTvCameraTitle"
+                app:layout_constraintStart_toStartOf="@id/uiTvId"
+                app:layout_constraintTop_toTopOf="@id/uiTvCameraTitle"
+                tools:text="FHAZ" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/uiTvEarthDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textColor="@color/grey"
+                app:layout_constraintBottom_toBottomOf="@id/uiTvEarthDateTitle"
+                app:layout_constraintStart_toEndOf="@id/uiTvEarthDateTitle"
+                app:layout_constraintTop_toTopOf="@id/uiTvEarthDateTitle"
+                tools:text="27-12-2020" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/uiTvMore"
+                android:layout_width="36dp"
+                android:layout_height="0dp"
+                android:text="@string/symbol_angle_bracket_right"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/colorPrimary"
+                android:background="@color/colorAccent"
+                android:gravity="center_vertical|center_horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
