@@ -34,6 +34,8 @@ class MarsImageAdapter(
         ): Boolean = oldItem == newItem
     }) {
 
+    private val marsData : ArrayList<MarsImageDataModel> = ArrayList()
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MarsImageViewHolder =
         MarsImageViewHolder(
             LayoutInflater.from(parent.context)
@@ -50,6 +52,13 @@ class MarsImageAdapter(
             .load(item.img_src)
             .placeholder(R.drawable.ic_image_placeholder)
             .into(holder.marsImage)
+    }
+
+    fun updateList(marsImageData: ArrayList<MarsImageDataModel>){
+        marsData.clear()
+        marsData.addAll(marsImageData)
+        submitList(marsData)
+        notifyDataSetChanged()
     }
 
     inner class MarsImageViewHolder(view: View) : RecyclerView.ViewHolder(view) {
