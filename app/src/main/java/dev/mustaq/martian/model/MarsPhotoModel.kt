@@ -12,6 +12,7 @@ data class MarsPhotoModel(
 data class MarsImageDataModel(
     val id: String,
     val sol: Int,
+    val img_src: String,
     val camera: CameraModel,
     val earth_date: String,
     val rover: RoverModel

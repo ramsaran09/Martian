@@ -14,7 +14,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/colorAccent">
+            android:background="@color/grey_light">
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/uiCvMarsImage"
@@ -29,6 +29,7 @@
                     android:layout_height="wrap_content">
 
                     <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/uiIvMarsImage"
                         android:layout_width="100dp"
                         android:layout_height="0dp"
                         android:src="@mipmap/ic_launcher"
@@ -85,7 +86,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:textColor="@color/grey"
-                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@id/uiTvIdTitle"
                 app:layout_constraintStart_toEndOf="@id/uiTvIdTitle"
                 app:layout_constraintTop_toTopOf="@id/uiTvIdTitle"
@@ -96,11 +96,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/grey"
-                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@id/uiTvCameraTitle"
                 app:layout_constraintStart_toStartOf="@id/uiTvId"
                 app:layout_constraintTop_toTopOf="@id/uiTvCameraTitle"
-                tools:text="2003" />
+                tools:text="FHAZ" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/uiTvEarthDate"
@@ -108,11 +107,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:textColor="@color/grey"
-                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@id/uiTvEarthDateTitle"
                 app:layout_constraintStart_toEndOf="@id/uiTvEarthDateTitle"
                 app:layout_constraintTop_toTopOf="@id/uiTvEarthDateTitle"
-                tools:text="2003" />
+                tools:text="27-12-2020" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/uiTvMore"
@@ -121,8 +119,8 @@
                 android:text="@string/symbol_angle_bracket_right"
                 android:textStyle="bold"
                 android:textSize="18sp"
-                android:textColor="@color/colorAccent"
-                android:background="@color/colorPrimaryDark"
+                android:textColor="@color/colorPrimary"
+                android:background="@color/colorAccent"
                 android:gravity="center_vertical|center_horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
