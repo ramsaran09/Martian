@@ -5,6 +5,7 @@ import dev.mustaq.martian.BuildConfig
 import dev.mustaq.martian.helper.defaultValue
 import dev.mustaq.martian.helper.isInternetAvailable
 import okhttp3.Cache
+import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.core.KoinComponent
@@ -25,6 +26,27 @@ object ApiProvider: KoinComponent {
         return Cache(context.cacheDir, cacheSize)
     }
 
+    val onlineInterceptor = Interceptor{ chain ->
+        val response = chain.proceed(chain.request())
+        val maxAge = 60
+        return@Interceptor response.newBuilder()
+            .header("Cache-Control", "public, max-age=$maxAge")
+            .removeHeader("Pragma")
+            .build()
+    }
+
+    val offlineInterceptor = Interceptor{ chain ->
+        var request = chain.request()
+        if (!context.isInternetAvailable().defaultValue()){
+            val maxStale = 60 * 60 * 24 * 30
+            request = request.newBuilder()
+                .header("Cache-Control", "public, only-if-cached, max-stale=$maxStale")
+                .removeHeader("Pragma")
+                .build()
+        }
+        return@Interceptor chain.proceed(request)
+    }
+
     private fun loggingInterceptor() =
         HttpLoggingInterceptor().apply {
             level = HttpLoggingInterceptor.Level.BODY
@@ -33,20 +55,15 @@ object ApiProvider: KoinComponent {
     private fun httpClient() =
         OkHttpClient.Builder().apply {
             addInterceptor(loggingInterceptor())
+            addInterceptor(offlineInterceptor)
+            addNetworkInterceptor(onlineInterceptor)
             cache(customCache())
-            addInterceptor{chain ->
-                var request = chain.request()
-                request = if (context.isInternetAvailable().defaultValue())
-                    request.newBuilder().header("Cache-Control", "public, max-age" + 5).build()
-                else request.newBuilder().header("Cache-Control", "public, only-if-cached, max-stale=" + 60 * 60 * 24 * 7).build()
-                chain.proceed(request)
-            }
         }.build()
 
     private val retrofit = Retrofit.Builder().apply {
         baseUrl(BuildConfig.BASE_URL)
-        client(httpClient())
         addConverterFactory(GsonConverterFactory.create())
+        client(httpClient())
     }.build()
 
     val client : ServiceApi by lazy { retrofit.create(ServiceApi::class.java) }
