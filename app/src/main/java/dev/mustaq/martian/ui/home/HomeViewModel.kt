@@ -29,8 +29,7 @@ class HomeViewModel(
 
     private fun getMarsImageData() {
         viewModelScope.launch {
-            val response = marsImageRepository.getMarsImageDataFromServer()
-            when(response) {
+            when(val response = marsImageRepository.getMarsImageDataFromServer()) {
                 is Success -> marsImageDataLd.value = response.data
                 is Failure -> errorLd.value = response.error.message
             }

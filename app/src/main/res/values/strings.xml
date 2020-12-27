@@ -5,4 +5,5 @@
     <string name="str_camera">Camera:</string>
     <string name="str_earth_date">Earth Date:</string>
     <string name="symbol_angle_bracket_right"><![CDATA[>]]></string>
+    <string name="title_mars_image">Mars Images</string>
 </resources>
