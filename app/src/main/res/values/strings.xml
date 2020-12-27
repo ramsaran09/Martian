@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Martian</string>
     <string name="str_martian">Martian</string>
+    <string name="str_photo_id">Photo ID:</string>
+    <string name="str_camera">Camera:</string>
+    <string name="str_earth_date">Earth Date:</string>
+    <string name="symbol_angle_bracket_right"><![CDATA[>]]></string>
 </resources>
