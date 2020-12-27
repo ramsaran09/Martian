@@ -7,9 +7,8 @@ import dev.mustaq.martian.helper.insertImageIntoView
 import dev.mustaq.martian.helper.observeLiveData
 import dev.mustaq.martian.model.MarsImageDataModel
 import kotlinx.android.synthetic.main.activity_rover_image_detail.*
-import kotlinx.android.synthetic.main.model_mar_image_list.*
-import kotlinx.android.synthetic.main.model_mar_image_list.uiIvMarsImage
-import kotlinx.android.synthetic.main.model_mar_image_list.uiTvEarthDate
+import kotlinx.android.synthetic.main.activity_rover_image_detail.uiIvMarsImage
+import kotlinx.android.synthetic.main.activity_rover_image_detail.uiTvEarthDate
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
@@ -38,7 +37,7 @@ class RoverImageDetailActivity : AppCompatActivity() {
 
     private fun displayRoverData(marsImageDataModel: MarsImageDataModel) {
         insertImageIntoView(marsImageDataModel.img_src, uiIvMarsImage)
-        uiTvCamera.text = marsImageDataModel.camera.full_name
+        uiTvCameraName.text = marsImageDataModel.camera.full_name
         uiTvEarthDate.text = marsImageDataModel.earth_date
         uiTvStatus.text = marsImageDataModel.rover.status
         uiTvRoverName.text = marsImageDataModel.rover.name

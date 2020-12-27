@@ -107,11 +107,25 @@
         android:layout_height="wrap_content"
         android:textColor="@color/grey"
         android:textAlignment="center"
-        android:textSize="10sp"
+        android:textSize="12sp"
         app:layout_constraintTop_toBottomOf="@id/uiTvRoverName"
         app:layout_constraintStart_toStartOf="@id/uiTvEarthDate"
         app:layout_constraintEnd_toEndOf="@id/uiTvEarthDate"
         tools:text="Rover Id: 5"
+        tools:ignore="SmallSp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/uiTvCredit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryDark"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        android:text="@string/str_credit"
+        android:background="@color/grey_light"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         tools:ignore="SmallSp" />
 
 

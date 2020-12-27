@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="dev.mustaq.martian">
 
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -12,9 +12,9 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:usesCleartextTraffic="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
         tools:targetApi="m">
 
         <activity android:name=".ui.splash.SplashActivity">
@@ -26,6 +26,10 @@
 
         <activity
             android:name=".ui.home.HomeActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.roverimagedetail.RoverImageDetailActivity"
             android:screenOrientation="portrait" />
     </application>
 

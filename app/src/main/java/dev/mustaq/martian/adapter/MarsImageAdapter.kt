@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import dev.mustaq.martian.R
 import dev.mustaq.martian.model.MarsImageDataModel
-
+import kotlinx.android.synthetic.main.model_mar_image_list.view.*
 
 /**
 Created by Mustaq Sameer on 27/12/20
@@ -62,11 +62,11 @@ class MarsImageAdapter(
     }
 
     inner class MarsImageViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val marsImage: AppCompatImageView = view.findViewById(R.id.uiIvMarsImage)
-        val id: AppCompatTextView = view.findViewById(R.id.uiTvId)
-        val camera: AppCompatTextView = view.findViewById(R.id.uiTvCamera)
-        val earthDate: AppCompatTextView = view.findViewById(R.id.uiTvEarthDate)
-        val more: AppCompatTextView = view.findViewById(R.id.uiTvMore)
+        val marsImage: AppCompatImageView = view.uiIvMarsImage
+        val id: AppCompatTextView = view.uiTvId
+        val camera: AppCompatTextView = view.uiTvCamera
+        val earthDate: AppCompatTextView = view.uiTvEarthDate
+        private val more: AppCompatTextView = view.uiTvMore
 
         init {
             more.setOnClickListener { onMoreDetailsClick.invoke(currentList[adapterPosition]) }

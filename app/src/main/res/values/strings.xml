@@ -7,4 +7,5 @@
     <string name="symbol_angle_bracket_right"><![CDATA[>]]></string>
     <string name="title_mars_image">Mars Images</string>
     <string name="str_rover_name">This image is taken by</string>
+    <string name="str_credit"> © Nasa APIs</string>
 </resources>

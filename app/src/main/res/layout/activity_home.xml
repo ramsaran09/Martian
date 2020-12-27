@@ -26,10 +26,23 @@
         android:id="@+id/uiRvMarsImages"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        tools:listitem="@layout/model_mar_image_list"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/uiAppBarLayout"/>
+        app:layout_constraintTop_toBottomOf="@id/uiAppBarLayout"
+        tools:listitem="@layout/model_mar_image_list" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/uiAnimationLoader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/uiAppBarLayout"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/animation_satellite_loader" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
