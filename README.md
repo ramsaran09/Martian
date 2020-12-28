@@ -1,7 +1,7 @@
 # Martian
 
 This is a simple android application which makes use of **NASA APIs** to display images taken in MARS. We parse JSON data from the API and display the
-images and the associated data in a list; user can click on the list item to know more info about the picture. 
+images and the associated data in a list; user can click on the list item to know more info about the picture. We have also implemented cache to look at previously downloaded data when offline. 
 
 https://api.nasa.gov/
 
@@ -14,7 +14,12 @@ https://api.nasa.gov/
 - **Koin** for dependency injection
 - **Glide** for image loading
 - **Lottie** for animation
+- I have also utilized Kotlin's extension functions, sealed classes, etc., for efficiency.
 
 # App Demo
 
 [![A simple android app to look Mars images](http://img.youtube.com/vi/kXtU2nBYHko/0.jpg)](http://www.youtube.com/watch?v=kXtU2nBYHko "Martian App Demo")
+
+# App apk
+
+https://github.com/Mustaqode/martian/blob/master/Martian_app.apk
