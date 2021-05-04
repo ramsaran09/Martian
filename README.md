@@ -20,6 +20,3 @@ https://api.nasa.gov/
 
 [![A simple android app to look Mars images](http://img.youtube.com/vi/kXtU2nBYHko/0.jpg)](http://www.youtube.com/watch?v=kXtU2nBYHko "Martian App Demo")
 
-# App apk
-
-https://github.com/Mustaqode/martian/blob/master/Martian_app.apk
