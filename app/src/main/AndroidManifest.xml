@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="dev.mustaq.martian">
+    package="dev.muthuram.martian">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".application.MartianApp"
+        android:name="dev.muthuram.martian.application.MartianApp"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -17,7 +17,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
 
-        <activity android:name=".ui.splash.SplashActivity">
+        <activity android:name="dev.muthuram.martian.ui.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -25,11 +25,11 @@
         </activity>
 
         <activity
-            android:name=".ui.home.HomeActivity"
+            android:name="dev.muthuram.martian.ui.home.HomeActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".ui.roverimagedetail.RoverImageDetailActivity"
+            android:name="dev.muthuram.martian.ui.roverimagedetail.RoverImageDetailActivity"
             android:screenOrientation="portrait" />
     </application>
 
